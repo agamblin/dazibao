@@ -1,8 +1,8 @@
 [submodule "server"]
 	path = server
 	url = git@github.com:esport-hatcher/api-v1.git
-	branch = master
+	branch = develop
 [submodule "client"]
 	path = client
 	url = git@github.com:esport-hatcher/web-client-v1.git
-	branch = master
+	branch = develop
