@@ -15,6 +15,11 @@ All you need is docker. Download docker from their [site](https://www.docker.com
 
 Then, launch the following command in the root directory
 
+First, clone the repository in recursive mode
+```
+git clone git@github.com:esport-hatcher/stack.git --recursive
+```
+
 ```
 docker-compose up --build
 ```
