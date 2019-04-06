@@ -1,0 +1,47 @@
+version: '3.2'
+services:
+  mysql:
+    image: 'mysql:5.7'
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    ports:
+      - '33061:3306'
+    environment:
+      MYSQL_ROOT_PASSWORD: 9uOxHyH9
+    entrypoint: sh -c "
+      echo 'CREATE DATABASE IF NOT EXISTS eh; CREATE DATABASE IF NOT EXISTS eh_test;' > /docker-entrypoint-initdb.d/init.sql;
+      /usr/local/bin/docker-entrypoint.sh --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci "
+  nginx:
+    restart: always
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile.dev
+    ports:
+      - '8081:80'
+  api:
+    build:
+      context: ./server
+      dockerfile: Dockerfile.dev
+    depends_on:
+      - mysql
+    volumes:
+      - /app/node_modules
+      - ./server:/app
+    ports:
+      - '8080:8080'
+    environment:
+      - NODE_ENV=dev
+      - SQL_HOST=mysql
+      - SQL_USER=root
+      - SQL_PASSWORD=9uOxHyH9
+      - SQL_DB=eh
+      - SQL_PORT=3306
+      - JWT_SECRET=9uOxHyH9
+      - PORT_API=8080
+  client_web:
+    build:
+      context: ./client
+      dockerfile: Dockerfile.dev
+    volumes:
+      - /app/node_modules
+      - ./client:/app
