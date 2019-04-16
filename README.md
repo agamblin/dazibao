@@ -89,7 +89,7 @@ Deployment is pretty straightforward. Actually we use some auto-deploy given by 
 
 ## Contributing
 
-Please read [WORKFLOW_EH](https://github.com/esport-hatcher/stack-esport-hatcher/blob/master/doc/FICHE_WORKFLOW_EH.md) for details on our code of conduct, and the process for submitting pull requests to us.
+Please read [WORKFLOW_EH](https://github.com/esport-hatcher/stack/blob/master/doc/FICHE_WORKFLOW_EH.md) for details on our code of conduct, and the process for submitting pull requests to us.
 
 ## Versioning
 
