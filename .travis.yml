@@ -11,6 +11,7 @@ git:
 before_install:
   - sed -i 's/git@github.com:/https:\/\/github.com\//' .gitmodules
   - git submodule update --init --recursive
+  # - git submodule foreach --recursive git checkout develop
   - docker build -t agamblin/eh-client-test -f ./client/Dockerfile.dev ./client
   - docker build -t agamblin/eh-server-test -f ./server/Dockerfile.dev ./server
 
