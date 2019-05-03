@@ -7,7 +7,7 @@ services:
 git:
   submodules: false
 # Use sed to replace the SSH URL with the public URL, then initialize submodules
-    
+
 before_install:
   - sed -i 's/git@github.com:/https:\/\/github.com\//' .gitmodules
   - git submodule update --init --recursive
@@ -15,8 +15,8 @@ before_install:
   - docker build -t agamblin/eh-server-test -f ./server/Dockerfile.dev ./server
 
 script:
-  - docker run agamblin/eh-client-test yarn test --coverage
-  - docker run -e SQL_HOST=$SQLHOST -e SQL_PORT=3306 -e SQL_USER=root -e SQL_PASSWORD=$SQLPWD -e SQL_DB=eh_test -e JWT_SECRET=somejwtrandom agamblin/eh-server-test yarn test --coverage
+  - docker run agamblin/eh-client-test yarn launch-tests-ci --coverage
+  - docker run -e SQL_HOST=$SQLHOST -e SQL_PORT=3306 -e SQL_USER=root -e SQL_PASSWORD=$SQLPWD -e SQL_DB=eh_test -e JWT_SECRET=somejwtrandom agamblin/eh-server-test yarn launch-tests --coverage
 # after_success:
 #   - docker build -t agamblin/eh-client ./client
 #   - docker build -t agamblin/eh-server ./server
