@@ -1,4 +1,12 @@
+
+<p align="center"> 
+	<img src="https://i.postimg.cc/T196WcHf/logo-4.png">
+</p>
+
 # Esport-Hachter
+
+![Bintray](https://img.shields.io/static/v1.svg?label=Vers&message=1.0.0&color=9cf)
+![Bintray](https://img.shields.io/static/v1.svg?label=Build&message=Passing&color=<green>)
 
 Project developed for Epitech. It's an Esport's intranet to manage your team smartly. This project is developed in TypeScript with two stacks:
 
@@ -50,12 +58,24 @@ To run the tests you'll have to follow some steps.
 After launching 
 ```docker-compose up```
 
+You can either go in the client direcotry and type ``yarn test``, same way for the server.
+It will access automatically the container and launch the tests.
+
+You can also specify a certain path for your test suit if you don't want all the tests to be run:
+
+```yarn test /src/tests/your/super/test/suite```
+
+
+#OR
+
+
 Follow this commands:
 
 #### 1. ```docker ps```
 #### 2. Grab the ID of the API's container otherwise grab's the one from the client if you want to launch test on client
 #### 3. ```docker exec -it {CONTAINER_ID} sh```
 #### 4. ```yarn test```
+
 
 ## Deployment
 
@@ -69,7 +89,7 @@ Deployment is pretty straightforward. Actually we use some auto-deploy given by 
 
 ## Contributing
 
-Please read [WORKFLOW_EH](https://github.com/esport-hatcher/stack-esport-hatcher/blob/master/doc/FICHE_WORKFLOW_EH.md) for details on our code of conduct, and the process for submitting pull requests to us.
+Please read [WORKFLOW_EH](https://github.com/esport-hatcher/stack/blob/master/doc/FICHE_WORKFLOW_EH.md) for details on our code of conduct, and the process for submitting pull requests to us.
 
 ## Versioning
 
