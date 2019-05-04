@@ -45,6 +45,8 @@ You can also access it by typing [localhost:8081/api](http://localhost:8081/api/
 The database is a MySQL 5.7 automatically created for you with docker
 
 
+The database is available in localhost:33061 (127.0.0.1)
+
 You can acess the database with the following credentials:
 
 	Username: root
@@ -100,11 +102,10 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 * **Amaury BREUIL** - *Project's leader / Administration* - [Amaurix](https://github.com/Amaurix)
 * **Lothaire NOAH** - *Backend Developer* - [SeniorMuchacho](https://github.com/SeniorMuchacho)
 * **Arthur GAMBLIN** - *Fullstack Developer* - [agamblin](https://github.com/agamblin)
-* **Yunhan XIA** - *Front Developer* - [yuhnanxia](https://github.com/yunhanxia)
-* **Ludwig AMEDEE** - *Front Developer* - [Ludamee](https://github.com/Ludamee)
-* **Ludovic Porokhov** - *Fullstack Developer* - [HommeSombre](https://github.com/HommeSombre)
-* **Antoine RENAUD** - *Backend Developer* - [Niavart](https://github.com/Niavart)
-* **Ramzi MELLITI** - *Fullstack Developer* - [Melliti](https://github.com/Melliti)
+* **Yunhan XIA** - *Backend Developer* - [yuhnanxia](https://github.com/yunhanxia)
+* **Ludwig AMEDEE** - *Frontend Developer* - [Ludamee](https://github.com/Ludamee)
+* **Ludovic Porokhov** - *Backend Developer* - [HommeSombre](https://github.com/HommeSombre)
+* **Ramzi MELLITI** - *Frontend Developer* - [Melliti](https://github.com/Melliti)
 
 See also the list of [contributors](https://github.com/esport-hatcher/stack-esport-hatcher/contributors) who participated in this project.
 
