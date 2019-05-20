@@ -1,0 +1,41 @@
+{
+  "extends": ["tslint-plugin-prettier", "tslint-config-prettier"],
+  //   "rulesDirectory": ["path/to/custom/rules/directory/", "another/path/"],
+  "rules": {
+    "prettier": true,
+    "no-console": true,
+    "await-promise": true,
+    "class-name": true,
+    "interface-name": true,
+    "curly": true,
+    "import-blacklist": true,
+    "no-import-side-effect": true,
+    "no-require-imports": true,
+    "no-duplicate-imports": true,
+    "import-spacing": true,
+    "match-default-export-name": true,
+    "no-any": true,
+    "no-empty": true,
+    "no-duplicate-super": true,
+    "no-empty-interface": true,
+    "no-floating-promises": true,
+    "no-invalid-this": true,
+    "no-parameter-reassignment": true,
+    "no-this-assignment": true,
+    "no-var-keyword": true,
+    "no-misused-new": true,
+    "no-construct": true,
+    "no-duplicate-variable": true,
+    "no-return-await": true,
+    "only-arrow-functions": true,
+    "prefer-const": true,
+    "promise-function-async": true,
+    "prefer-readonly": true,
+    "switch-default": true,
+    "variable-name": true,
+    "return-undefined": true
+  },
+  "jsRules": {
+    "prettier": true
+  }
+}
