@@ -4,10 +4,18 @@
 @import './abstracts/variables';
 
 //      BASE
+@import './base/typography';
 @import './base/base';
 @import './base/animations';
-@import './base/typography';
 @import './base/utilities';
 
 //      COMPONENTS
-@import './components/input.scss';
+@import './components/section-intro';
+
+//      LAYOUTS 
+@import './layouts/navigation';
+
+
+//      PAGES
+@import './screens/splash-screen';
+@import './screens/affiches-screen';

@@ -1,0 +1,26 @@
+.section-intro {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+
+    &--fadeout {
+        animation: fadeOut 3s ease-out;
+    }
+    
+    &__title {
+        @extend .big-title;
+        @include absCenter;
+
+        & > * {
+            display: block
+        }
+     
+        &--1 {
+                animation: moveInLeft 1s ease-out;
+        }
+
+        &--2 {
+                animation: moveInRight 1s ease-out;
+        }
+    }
+}

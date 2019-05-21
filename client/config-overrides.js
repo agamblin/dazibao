@@ -5,7 +5,7 @@ module.exports = function override(config) {
         ...config.resolve,
         alias: {
             '@': path.resolve(__dirname, 'src/app'),
-            '@styles': path.resolve(__dirname, 'src/styles'),
+            '@assets': path.resolve(__dirname, 'src/assets'),
         },
     };
 

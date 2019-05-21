@@ -54,8 +54,8 @@
   },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx,json,md}": [
-      "npm run lint",
       "prettier --config .prettierrc.json --write",
+      "npm run lint",
       "git add"
     ]
   },

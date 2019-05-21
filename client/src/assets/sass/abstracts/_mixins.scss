@@ -1,0 +1,72 @@
+@mixin font-face($name, $path, $weight: null, $style: null, $exts: eot woff2 woff ttf svg) {
+	$src: null;
+
+	$extmods: (
+		eot: "?",
+		svg: "#" + str-replace($name, " ", "_")
+	);
+
+	$formats: (
+		otf: "opentype",
+		ttf: "truetype"
+	);
+
+	@each $ext in $exts {
+		$extmod: if(map-has-key($extmods, $ext), $ext + map-get($extmods, $ext), $ext);
+		$format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext);
+		$src: append($src, url(quote($path + "." + $extmod)) format(quote($format)), comma);
+	}
+
+	@font-face {
+		font-family: quote($name);
+		font-style: $style;
+		font-weight: $weight;
+		src: $src;
+	}
+}
+
+@mixin absCenter {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+
+@mixin respond($breakpoint) {
+	@if $breakpoint == phone {
+	  @media (max-width: 37.5em) {
+		// 600px
+		@content;
+	  }
+	}
+  
+	@if $breakpoint == tab-port {
+	  @media (max-width: 56.25em) {
+		// 900px
+		@content;
+	  }
+	}
+  
+	@if $breakpoint == tab-land {
+	  @media (max-width: 75em) {
+		// 1200px
+		@content;
+	  }
+	}
+
+	@if $breakpoint == normal-desk {
+		@media (max-width: 100em) {
+			// 1600px;
+			@content;
+		}
+	}
+
+	@if $breakpoint == big-desk {
+	  @media (min-width: 130em) {
+		// 1800px >
+		@content;
+	  }
+	}
+  }
+  

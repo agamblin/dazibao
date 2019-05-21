@@ -1,0 +1,11 @@
+@include font-face(Murmure, '../fonts/Le_Murmure-Regular_web');
+
+.big-title {
+      font-size: 50rem;
+      text-transform: capitalize;
+      line-height: 0.9;
+
+      @include respond(big-desk) {
+            font-size: 66.6rem;
+      }
+}

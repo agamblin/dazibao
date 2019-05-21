@@ -26,16 +26,16 @@ exports.getToken = (req, res, next) => tslib_1.__awaiter(this, void 0, void 0, f
     const { email, password } = req.body;
     const user = yield User_1.default.findOne({ where: { email } });
     if (!user) {
-        const error = new Error("Email not found");
+        const error = new Error('Email not found');
         error.statusCode = 404;
-        error.message = "Email not found";
+        error.message = 'Email not found';
         return next(error);
     }
     const equal = yield bcryptjs_1.compare(password, user.password);
     if (!equal) {
-        const error = new Error("Bad credentials");
+        const error = new Error('Bad credentials');
         error.statusCode = 401;
-        error.message = "Bad credentials";
+        error.message = 'Bad credentials';
         return next(error);
     }
     return res.status(200).json({ token: tokenForUser(user) });
