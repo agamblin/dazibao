@@ -4,6 +4,7 @@ import * as express from 'express';
 
 // Routes
 import userRoutes from '@routes/userRoutes';
+import affichesRoutes from '@routes/afficheRoutes';
 import IError from '@typings/general/IError';
 import IRequest from '@typings/general/IRequest';
 
@@ -16,6 +17,7 @@ app.use(json());
 
 // Redirect every url beginning by auth to authRoutes
 app.use('/users', userRoutes);
+app.use('/affiches', affichesRoutes);
 
 // Healthcheck route
 app.get('/', (req, res) => {

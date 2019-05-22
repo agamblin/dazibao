@@ -37,6 +37,7 @@ services:
       - SQL_PORT=3306
       - JWT_SECRET=9uOxHyH9
       - PORT_API=8080
+      - ADMIN_PASSWORD=randomtest
   client_web:
     build:
       context: ./client

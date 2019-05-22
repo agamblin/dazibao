@@ -1,6 +1,6 @@
 import { Model, DataTypes } from 'sequelize';
 import { db } from '@db';
-import { hash } from 'bcryptjs';
+
 // import {
 // 	HasManyGetAssociationsMixin,
 // 	HasManyAddAssociationMixin,
@@ -10,13 +10,10 @@ import { hash } from 'bcryptjs';
 // 	HasManyCreateAssociationMixin
 // } from 'sequelize/lib/associations';
 
-export default class User extends Model {
+export default class Affiche extends Model {
     public id!: number; // Note that the `null assertion` `!` is required in strict mode.
-    public username!: string;
-    public email!: string; // for nullable fields
-    public avatarUrl: string;
-    public password: string;
-    public superAdmin: boolean;
+    public description!: string;
+    public imageUrl!: string; // for nullable fields
 
     // timestamps!
     public readonly createdAt!: Date;
@@ -41,30 +38,25 @@ export default class User extends Model {
     // };
 }
 
-User.init(
+Affiche.init(
     {
         id: {
             type: DataTypes.INTEGER.UNSIGNED,
             autoIncrement: true,
             primaryKey: true,
         },
-        password: {
-            type: new DataTypes.STRING(128),
+        description: {
+            type: new DataTypes.TEXT(),
             allowNull: false,
         },
-        username: {
+        imageUrl: {
             type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: true,
+            defaultValue: 'needs to bet set',
         },
     },
     {
-        tableName: 'Users',
+        tableName: 'Affiche',
         sequelize: db,
     }
 );
-
-User.beforeCreate(async user => {
-    const hashed = await hash(user.password, 10);
-    user.password = hashed;
-    return Promise.resolve();
-});

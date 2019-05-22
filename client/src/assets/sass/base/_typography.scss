@@ -5,8 +5,17 @@
       text-transform: capitalize;
       line-height: 0.9;
 
+
+      @include respond(tab-land) {
+            font-size: 40rem;
+      }
+
       @include respond(tab-port) {
             font-size: 35rem;
+      }
+
+      @include respond(phone) {
+            font-size: 20rem;
       }
 
       @include respond(big-desk) {
