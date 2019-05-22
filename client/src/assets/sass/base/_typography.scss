@@ -5,6 +5,10 @@
       text-transform: capitalize;
       line-height: 0.9;
 
+      @include respond(tab-port) {
+            font-size: 35rem;
+      }
+
       @include respond(big-desk) {
             font-size: 66.6rem;
       }

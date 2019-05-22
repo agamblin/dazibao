@@ -54,14 +54,16 @@
       list-style: none;
       text-align: left;
       width: 70%;
-
+      
       @include respond(tab-land) {
         width: 90%;
+        top: 60%;
       }
 
-      @include respond(normal-desk) {
-        width: 80%;
+      @include respond(tab-port) {
+        top: 70%;
       }
+
     }
   
     &__item {
@@ -86,6 +88,10 @@
 
         @include respond(tab-land) {
           font-size: 10rem;
+        }
+
+        @include respond(tab-port) {
+          font-size: 8rem;
         }
 
         @include respond(big-desk) {
