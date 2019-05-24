@@ -6,6 +6,6 @@ const userRoutes = Router();
 
 userRoutes.post('/token', userController.getToken);
 
-userRoutes.get('/', requireAuth, userController.getUserInfo);
+userRoutes.get('/token', requireAuth, userController.getUserInfo);
 
 export default userRoutes;

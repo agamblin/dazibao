@@ -23,9 +23,7 @@ app.use('/affiches', affichesRoutes);
 app.get('/', (req, res) => {
     // tslint:disable-next-line: no-unused-expression
     req;
-    return res
-        .status(200)
-        .json({ success: 'Esport-Hatcher {API v1.0} is live' });
+    return res.status(200).json({ success: 'Dazibao API' });
 });
 
 // Error handler

@@ -1,0 +1,71 @@
+.login {
+    height: 100vh;
+    width: 100%;
+
+     &__box {
+         width: 60rem;
+         text-align: center;
+         @include absCenter;
+     }
+
+     &__group {
+
+        position: relative;
+
+        &:not(:last-child) {
+            margin-bottom: 6rem;
+        }
+        
+        &--label {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-left: 2rem;
+            display: block;
+            transition: all 0.3s;
+            position: absolute;
+            top: -1rem;
+        }
+
+        &--input {
+            border-radius: 5px;
+            font-size: 3em;
+            padding: 2rem 3rem;
+            border-radius: 2px;
+            letter-spacing: 10px;
+            background-color: rgba(#eee, 0.7);
+            border: none;
+            color: inherit;
+            font-family: inherit;
+            border-bottom: 3px solid transparent;
+            width: 90%;
+            display: block;
+            transition: all 0.3s;
+            margin: 0 auto;
+        
+            &:focus {
+            outline: none;
+            background-color: #fff;
+            box-shadow: 0 1rem 2rem rgba(#000, 0.2);
+            border-color: #000;
+            }
+        
+            &:focus:invalid {
+            border-color: #000;
+            }
+        
+            // defines the style of a placeholder for an input
+            &::-webkit-input-placeholder {
+            color: lighten(#000, 30%);
+            }
+        }
+
+        &--input:placeholder-shown + &--label {
+            opacity: 0;
+            visibility: hidden;
+            transform: translate(3.5rem, 3.5rem);
+            font-size: 3rem;
+            letter-spacing: 10px;
+          }
+        
+    }
+}

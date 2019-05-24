@@ -8,6 +8,7 @@
 
 html {
   font-size: 62.5%; // this defines what 1 rem is (default on navigator: 16px)
+  scroll-behavior: smooth !important;
 }
 
 body {

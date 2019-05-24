@@ -1,14 +1,17 @@
-import React, { Component } from 'react';
-import SectionIntro from '@/components/SectionIntro';
+import { connect } from 'react-redux';
+import GalleryScreen from './Gallery';
+import { IState } from 'src/typings/states/global';
+import { fetchAffiches } from '@/actions/affiches';
 
-export class GalleryScreen extends Component {
-    render() {
-        return (
-            <div>
-                <SectionIntro content='Gallery' />
-            </div>
-        );
+const mapStateToProps = (state: IState) => {
+    return {
+        affiches: state.affiches,
+    };
+};
+
+export default connect(
+    mapStateToProps,
+    {
+        fetchAffiches,
     }
-}
-
-export default GalleryScreen;
+)(GalleryScreen);

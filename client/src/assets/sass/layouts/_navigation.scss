@@ -16,13 +16,13 @@
       text-align: center;
   
       @include respond(tab-port) {
-        top: 4rem;
-        right: 4rem;
+        top: 0rem;
+        right: 0rem;
       }
   
       @include respond(phone) {
-        top: 3rem;
-        right: 3rem;
+        top: 0rem;
+        right: 0rem;
       }
     }
   

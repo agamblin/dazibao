@@ -18,7 +18,7 @@ export const list = async (
 ) => {
     req;
     try {
-        const affiches = Affiche.findAll();
+        const affiches = await Affiche.findAll();
         return res.status(200).json(affiches);
     } catch (err) {
         return next(err);
@@ -35,8 +35,8 @@ export const create = async (
         const affiche = await Affiche.create({ description });
         const { key, url } = await getS3Link(affiche.id, fileType);
         affiche.imageUrl = `https://s3.eu-west-3.amazonaws.com/tribe-storage/${key}`;
-        await affiche.save();
-        return res.status(201).json({ key, url });
+        const savedAffiche = await affiche.save();
+        return res.status(201).json({ affiche: savedAffiche, url });
     } catch (err) {
         return next(err);
     }

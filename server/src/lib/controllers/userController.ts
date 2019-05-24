@@ -5,6 +5,7 @@ import { jwtSecret } from '@config/keys';
 import IRequest from '@typings/general/IRequest';
 import User from '@models/User';
 import IError from '@typings/general/IError';
+import { pick } from 'lodash';
 
 const tokenForUser = (user: User) => {
     const timestamp = new Date().getTime();
@@ -12,7 +13,9 @@ const tokenForUser = (user: User) => {
 };
 
 export const getUserInfo = async (req: IRequest, res: Response) => {
-    return res.status(200).json({ name: req.user.username });
+    return res.status(200).json({
+        ...pick(req.user, 'id', 'username', 'createdAt', 'updatedAt'),
+    });
 };
 
 export const getToken = async (
@@ -36,5 +39,7 @@ export const getToken = async (
         error.message = 'Bad credentials';
         return next(error);
     }
-    return res.status(200).json({ token: tokenForUser(user) });
+    return res.status(200).json({
+        token: tokenForUser(user),
+    });
 };

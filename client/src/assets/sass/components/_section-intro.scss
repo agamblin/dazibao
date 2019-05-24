@@ -6,6 +6,10 @@
     &--fadeout {
         animation: fadeOut 3s ease-out;
     }
+
+    &--fadein {
+        animation: fadeIn .5s ease-in;
+    }
     
     &__title {
         @extend .big-title;

@@ -1,0 +1,96 @@
+.affiches-form {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(#000, 0.8);
+    z-index: 4;
+    opacity: 0;
+    visibility: hidden;
+
+    &__form { 
+        border-radius: 5px;
+        @include absCenter;
+        padding: 5rem;
+        background-color: white;
+        overflow: hidden;
+        text-align: center;
+
+        &__container {
+            display: flex;
+            flex-direction: row;
+            overflow: hidden;
+        }
+
+       &__form-group {
+           overflow: hidden;
+
+           &__shape {
+                height: 50rem;
+                width: 50rem;
+                overflow: hidden;
+                position: relative;
+                border-radius: 5px;
+
+                figcaption {
+                    position: absolute;
+                    color: #fff;
+                    text-transform: uppercase;
+                    text-align: center;
+                    top: 100%;
+                    left: 50%;
+                    font-size: 3rem;
+                    transform: translate(-50%, 20%);
+                    opacity: 0;
+                    transition: all 0.5s;
+                    backface-visibility: hidden;
+                  }
+
+                  &:hover figcaption {
+                    opacity: 1;
+                    top: 20%;
+                    transform: translate(-50%, -50%);
+                    cursor: pointer;
+                    width: 40%;
+                  }
+
+                  &:hover img {
+                    transform: scale(0.8);
+                    filter: blur(3px) brightness(80%);
+                  }
+           }
+
+           &__img {
+               height: 100%;
+               width: 100%;
+               object-fit: cover;
+               transition: all .5s;
+
+              
+           }
+
+           &__textarea {
+                width: 40rem;
+                height: 50rem;
+                outline: none;
+                font-size: 1.5rem;
+                padding: 2rem 4rem;
+                border-radius: 10px;
+           }
+
+           &:not(:last-child) {
+               margin-right: 5rem;
+           }
+       }
+    }
+
+    &__toggler {
+        display: none;
+    }
+
+    &__toggler:checked + &  {
+        visibility: visible;
+        opacity: 1;
+    }
+}

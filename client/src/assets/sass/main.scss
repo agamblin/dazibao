@@ -11,11 +11,16 @@
 
 //      COMPONENTS
 @import './components/section-intro';
+@import './components/btn';
 
 //      LAYOUTS 
 @import './layouts/navigation';
-
+@import './layouts/affiches-form';
+@import './layouts/affiche-item';
 
 //      PAGES
 @import './screens/splash-screen';
 @import './screens/affiches-screen';
+@import './screens/login-screen';
+@import './screens/gallery';
+@import './screens/admin-screen';
