@@ -1,21 +1,29 @@
-
-<p align="center"> 
-	<img src="https://i.postimg.cc/T196WcHf/logo-4.png">
-</p>
-
-# Esport-Hachter
+# Dazibao
 
 ![Bintray](https://img.shields.io/static/v1.svg?label=Vers&message=1.0.0&color=9cf)
 ![Bintray](https://img.shields.io/static/v1.svg?label=Build&message=Passing&color=<green>)
 
-Project developed for Epitech. It's an Esport's intranet to manage your team smartly. This project is developed in TypeScript with two stacks:
+Dazibao is a project in collaboration with [Hugo Gamblin](https://gamblinhugo.myportfolio.com/).
+This project was presented as part of his final defense for his Master at [École de Condé](https://ecoles-conde.com/).
 
-1. 	Node.js for the API
-2. React for the Web Client
+Dazibao is aimed to showcase various prints and their meaning on society in an interactive experience.
+
+---
+
+## Development
+
+This project is composed of: 
+
+1. **Node.js** for the server - serving as an admin door for content management as the use of a CMS was overkill.
+2. **React** for the Web Client - No SSR involved.
+3. An **NGINX** container, responsible for rerouting between the _client_ and _server_.
+
+All the parts have been dockerized for an easy and accessible onboarding. 
+
 
 ## Getting Started
 
-In orde to make everything working, you'll have to follow some steps
+In order to make everything working, you'll have to follow some steps
 
 ### Prerequisites
 
@@ -25,7 +33,7 @@ Then, launch the following command in the root directory
 
 First, clone the repository in recursive mode
 ```
-git clone git@github.com:esport-hatcher/stack.git --recursive
+git clone git@github.com:agamblin/dazibao.git
 ```
 
 ```
@@ -89,25 +97,9 @@ Deployment is pretty straightforward. Actually we use some auto-deploy given by 
 * [React](https://reactjs.org/) - The web client framework used
 * [Sequelize](http://docs.sequelizejs.com/) - The ORM used
 
-## Contributing
-
-Please read [WORKFLOW_EH](https://github.com/esport-hatcher/stack/blob/master/doc/FICHE_WORKFLOW_EH.md) for details on our code of conduct, and the process for submitting pull requests to us.
-
 ## Versioning
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/esport-hatcher/stack-esport-hatcher/tags). 
-
-## Authors
-
-* **Amaury BREUIL** - *Project's leader / Administration* - [Amaurix](https://github.com/Amaurix)
-* **Lothaire NOAH** - *Backend Developer* - [SeniorMuchacho](https://github.com/SeniorMuchacho)
-* **Arthur GAMBLIN** - *Fullstack Developer* - [agamblin](https://github.com/agamblin)
-* **Yunhan XIA** - *Backend Developer* - [yuhnanxia](https://github.com/yunhanxia)
-* **Ludwig AMEDEE** - *Frontend Developer* - [Ludamee](https://github.com/Ludamee)
-* **Ludovic Porokhov** - *Backend Developer* - [HommeSombre](https://github.com/HommeSombre)
-* **Ramzi MELLITI** - *Frontend Developer* - [Melliti](https://github.com/Melliti)
-
-See also the list of [contributors](https://github.com/esport-hatcher/stack-esport-hatcher/contributors) who participated in this project.
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/esport-hatcher/stack-esport-hatcher/tags). .
 
 ## License
 
