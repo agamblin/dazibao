@@ -7,7 +7,7 @@ services:
     ports:
       - '33061:3306'
     environment:
-      MYSQL_ROOT_PASSWORD: 9uOxHyH9
+      MYSQL_ROOT_PASSWORD: dummypwd
     entrypoint: sh -c "
       echo 'CREATE DATABASE IF NOT EXISTS dazibao;' > /docker-entrypoint-initdb.d/init.sql;
       /usr/local/bin/docker-entrypoint.sh --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci "
@@ -32,10 +32,10 @@ services:
       - NODE_ENV=dev
       - SQL_HOST=mysql
       - SQL_USER=root
-      - SQL_PASSWORD=9uOxHyH9
+      - SQL_PASSWORD=dummypwd
       - SQL_DB=dazibao
       - SQL_PORT=3306
-      - JWT_SECRET=9uOxHyH9
+      - JWT_SECRET=dummypwd
       - PORT_API=8080
   client_web:
     build:
