@@ -55,11 +55,6 @@ The database is a MySQL 5.7 automatically created for you with docker
 
 The database is available in localhost:33061 (127.0.0.1)
 
-You can acess the database with the following credentials:
-
-	Username: root
-	
-	Password: 9uOxHyH9
 
 ## Running the tests
 
